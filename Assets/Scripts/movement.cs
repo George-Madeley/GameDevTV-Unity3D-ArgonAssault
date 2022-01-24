@@ -15,12 +15,40 @@ public class movement : MonoBehaviour
     [SerializeField] float positionYawFactor = 2f;
     [SerializeField] float controlRollFactor = -10f;
 
+    [SerializeField] GameObject[] bullets;
+
     float xThrow, yThrow;
 
     private void Update()
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
+    }
+
+    private void ProcessFiring()
+    {
+        if (Input.GetButton("Fire1")) {
+            ActiveBullets();
+        } else {
+            DeactivateBullets();
+        }
+    }
+
+    private void DeactivateBullets()
+    {
+        foreach(GameObject bullet in bullets) {
+            var emissionModule = bullet.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = false;
+        }
+    }
+
+    private void ActiveBullets()
+    {
+        foreach(GameObject bullet in bullets) {
+            var emissionModule = bullet.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = true;
+        }
     }
 
     private void ProcessRotation()
