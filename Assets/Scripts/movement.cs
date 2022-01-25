@@ -5,16 +5,28 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    [Header("Translation Settings")]
+    [Tooltip("The speed moving horizontal and vertical")]
     [SerializeField] float controlSpeed = 10f;
+    [Tooltip("Horizontal range in which the plane and traverse within")]
     [SerializeField] float xRange = 5f;
+    [Tooltip("Vertical range in which the plane can traverse within")]
     [SerializeField] float yRange = 5f;
 
+    [Header("Screen position based tuning")]
+    [Tooltip("How much to change the pitch by depending on position")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float controlPitchFactor = -10f;
-
+    [Tooltip("How much to change the yaw by depending on position")]
     [SerializeField] float positionYawFactor = 2f;
+
+    [Header("Player input based tuning")]
+    [Tooltip("How much to change the pitch by depending on player input")]
+    [SerializeField] float controlPitchFactor = -10f;
+    [Tooltip("How much to change the roll by depending on player input")]
     [SerializeField] float controlRollFactor = -10f;
 
+    [Header("Particle Systems")]
+    [Tooltip("List of bullet particle systems")]
     [SerializeField] GameObject[] bullets;
 
     float xThrow, yThrow;
