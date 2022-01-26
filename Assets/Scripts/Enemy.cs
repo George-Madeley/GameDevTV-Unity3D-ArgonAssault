@@ -8,10 +8,30 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [Tooltip("Parent object for the particle systems")]
     [SerializeField] Transform parentObject;
+    [Tooltip("Score per hit")]
+    [SerializeField] int scorePerHit = 10;
 
-    private void OnParticleCollision(GameObject other) {
+    ScoreBoard scoreBoard;
+
+    private void Start() {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        ProcessHit();
+        KillEnemy();
+    }
+
+    private void KillEnemy()
+    {
         GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
         vfx.transform.parent = parentObject;
         Destroy(gameObject);
+    }
+
+    private void ProcessHit()
+    {
+        scoreBoard.IncreaseScore(scorePerHit);
     }
 }
