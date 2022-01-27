@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Tooltip("Particle System to play when the enemy is destroyed")]
-    [SerializeField] GameObject deathVFX;
+    [SerializeField] GameObject deathFX;
     [Tooltip("Particle System fto play when the enemy has been hit")]
     [SerializeField] GameObject hitVFX;
     [Tooltip("Score per hit")]
@@ -47,8 +47,8 @@ public class Enemy : MonoBehaviour
     private void KillEnemy()
     {
         IncreaseScore(5);
-        GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parentObject.transform;
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parentObject.transform;
         Destroy(gameObject);
     }
 
