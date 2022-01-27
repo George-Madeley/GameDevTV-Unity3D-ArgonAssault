@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1660799651755146463}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: RuntimeInstantiation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 1494083766182838, guid: 151b49b11ab5924429acc76ead6435fa, type: 3}
   hitVFX: {fileID: 1201519446621124, guid: f575565b2e852564f862f4c258ba4ec0, type: 3}
-  parentObject: {fileID: 1384029806812974638, guid: e498befbb65553a4b81ff057f1b2984a, type: 3}
   scorePerHit: 10
   enemyHP: 3

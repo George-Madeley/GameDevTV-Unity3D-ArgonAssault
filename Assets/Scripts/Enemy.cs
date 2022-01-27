@@ -8,17 +8,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [Tooltip("Particle System fto play when the enemy has been hit")]
     [SerializeField] GameObject hitVFX;
-    [Tooltip("Parent object for the particle systems")]
-    [SerializeField] Transform parentObject;
     [Tooltip("Score per hit")]
     [SerializeField] int scorePerHit = 10;
     [Tooltip("Enemy HP")]
     [SerializeField] int enemyHP = 3;
 
     ScoreBoard scoreBoard;
+    GameObject parentObject;
 
     private void Start() {
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        parentObject = GameObject.FindWithTag("RuntimeInstantiation");
     }
 
     private void OnParticleCollision(GameObject other)
@@ -34,7 +34,13 @@ public class Enemy : MonoBehaviour
     {
         IncreaseScore(1);
         GameObject vfx = Instantiate(hitVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parentObject;
+        if(vfx == null) {
+            Debug.Log("VFX Null)");
+        }
+        if(parentObject == null) {
+            Debug.Log(("Parent Null"));
+        }
+        vfx.transform.parent = parentObject.transform;
         DecreaseHealth();
     }
 
@@ -42,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         IncreaseScore(5);
         GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        vfx.transform.parent = parentObject;
+        vfx.transform.parent = parentObject.transform;
         Destroy(gameObject);
     }
 

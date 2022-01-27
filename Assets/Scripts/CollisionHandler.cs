@@ -13,7 +13,6 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem crashParticles;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log($"{this.name}**Triggered by**{other.gameObject.name}");
         StartCrashSequence();
     }
 

@@ -76,21 +76,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1660799651755146463, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
+      propertyPath: enemyHP
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2494889990319298364, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2494889990319298364, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.19208
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 2494889990319298364, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 48.18667
+      value: 32.9
       objectReference: {fileID: 0}
     - target: {fileID: 2494889990319298364, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 380.9594
+      value: 333.32
       objectReference: {fileID: 0}
     - target: {fileID: 2494889990319298364, guid: 7f217a7d0ab6c1e47996cef3eec6065e, type: 3}
       propertyPath: m_LocalRotation.w
